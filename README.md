@@ -34,6 +34,7 @@ Each prompt is structured with a defined role, objective, and output format, run
   - [Reporting & Analysis](#-reporting--analysis)
   - [GEO & LLM Optimization](#-geo--llm-optimization)
 - [Tips](#-tips)
+- [Adding a New Skill](#-adding-a-new-skill)
 
 ---
 
@@ -553,6 +554,55 @@ GEO workflow:
   → /geo-entity → /geo-rewrite
   → /geo-audit  (score the final page before publishing)
 ```
+
+---
+
+## ➕ Adding a New Skill
+
+1. **Create the skill file** in the correct category folder under `skills/`:
+
+```
+skills/technical-seo/your-skill-name.md
+```
+
+Follow this structure:
+
+```
+Role:
+[Who the AI is]
+
+Objective:
+[One sentence describing the goal]
+
+Core Requirements:
+[Numbered list of instructions]
+
+Input I Will Provide:
+[What the user will paste or reference]
+
+Output Instructions:
+[How the output should be structured]
+```
+
+2. **Add it to `sync.sh`** — open `sync.sh` and add a line to the `SKILL_TO_COMMAND` mapping:
+
+```python
+"technical-seo/your-skill-name.md": "your-command-name.md",
+```
+
+3. **Run the sync script** to generate the Claude Code slash command automatically:
+
+```bash
+python3 sync.sh
+```
+
+4. **Update `help.md`** — add the new command to `.claude/commands/help.md`
+
+5. **Update the context files** — add the skill to `CLAUDE.md`, `GEMINI.md`, and `chatgpt.md`
+
+6. **Update `README.md`** — add a row to the relevant Prompt Reference table
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for full guidelines.
 
 ---
 
