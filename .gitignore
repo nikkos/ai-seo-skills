@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Client data — never commit
+data/*
+!data/.gitkeep
+
+# Generated outputs — never commit
+outputs/*
+!outputs/.gitkeep
