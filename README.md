@@ -20,6 +20,8 @@ Each prompt is structured with a defined role, objective, and output format, run
 - [Setup](#-setup)
   - [Claude Code — Slash Commands](#claude-code--slash-commands)
   - [Gemini CLI](#gemini-cli)
+  - [ChatGPT](#chatgpt)
+  - [Cursor, Windsurf & Antigravity](#cursor-windsurf--antigravity)
   - [MCP Servers](#-run-with-mcp-servers)
 - [Workflow](#-workflow)
 - [Prompt Reference](#-prompt-reference)
@@ -164,6 +166,33 @@ Primary keyword: "email marketing", site: acme.com
 ```
 
 Output is saved automatically to `outputs/` after each prompt.
+
+---
+
+### ChatGPT
+
+Use the prompts inside a **ChatGPT Project** for a persistent, reusable setup.
+
+**One-time setup:**
+
+1. Create a new ChatGPT Project
+2. Go to **Instructions** and paste the contents of `chatgpt.md`
+3. Upload the skill files you need from `skills/` into the project **Knowledge**
+4. Optionally upload `brand-voice.md` so tone and language apply automatically
+
+**Running a prompt:**
+
+```
+Use the robots-txt-audit skill and audit this robots.txt:
+[paste robots.txt here]
+```
+
+```
+Use the ga4-organic-traffic-analysis skill.
+The GA4 data is attached. Site: acme.com. Period: last 3 months vs prior 3 months.
+```
+
+For data files, attach the CSV directly to the chat message.
 
 ---
 
@@ -523,4 +552,4 @@ GEO workflow:
 
 ## 🗺️ Next Steps
 
-- [ ] **ChatGPT support** — add `chatgpt.md` context file and usage instructions for ChatGPT (custom GPTs or Projects)
+- [x] **ChatGPT support** — `chatgpt.md` context file and usage instructions for ChatGPT Projects
