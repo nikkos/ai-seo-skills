@@ -469,8 +469,8 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a PR. For ideas or que
 
 ---
 
-## 🗺️ Next Steps
+## ⚠️ Disclaimer
 
-> ⚠️ **Always review AI output before publishing or sending to a client.** LLMs can make mistakes — facts, URLs, schema syntax, and recommendations may be incorrect.
+Always review AI output before publishing, deploying, or sending to a client. LLMs can make mistakes — facts, URLs, schema syntax, redirect rules, and recommendations may be incorrect. Treat every output as a first draft that requires human review.
 
-> 🔒 **Always get client permission before sharing their data with any AI tool.**
+Never share client data (analytics exports, crawl reports, GSC data, server logs) with any AI tool without explicit client permission. This data contains proprietary business information that belongs to the client.
