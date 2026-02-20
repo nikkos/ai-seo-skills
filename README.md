@@ -1,43 +1,48 @@
-# seo-ai-tool
+<div align="center">
 
-> 50+ professional SEO prompt commands for Claude Code — install once, use from any folder.
+# 🔍 seo-ai-tool
 
-If you do SEO work and use Claude Code, this tool gives you a full library of ready-made commands for every SEO task: technical audits, content writing, keyword research, analytics analysis, local SEO, e-commerce, GEO/LLM optimization, and more.
+**50+ professional SEO prompt commands for Claude Code**
 
-Instead of writing prompts from scratch every time, you just type `/write-blog`, `/robots-audit`, or `/keyword-research` directly inside Claude Code and get a professional, structured result immediately.
+Install once. Use from any folder. Get expert-level SEO output in seconds.
+
+[![npm version](https://img.shields.io/npm/v/seo-ai-tool?color=brightgreen&style=flat-square)](https://www.npmjs.com/package/seo-ai-tool)
+[![npm downloads](https://img.shields.io/npm/dm/seo-ai-tool?color=blue&style=flat-square)](https://www.npmjs.com/package/seo-ai-tool)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D16-brightgreen?style=flat-square)](https://nodejs.org)
+
+</div>
 
 ---
 
-## What is Claude Code?
+## What is this?
 
-[Claude Code](https://www.npmjs.com/package/@anthropic-ai/claude-code) is Anthropic's official AI assistant for the terminal. It lets you work with AI directly from your command line — no browser needed. Once you have it installed, you can run slash commands like `/write-blog` and Claude will execute a pre-written expert prompt for you.
+If you do SEO work and use Claude Code, this tool gives you a full library of ready-made commands for every SEO task — technical audits, content writing, keyword research, analytics analysis, local SEO, e-commerce, GEO/LLM optimization, and more.
 
-This package installs 50+ SEO-specific slash commands into Claude Code so you have a professional SEO toolkit ready at all times.
+Instead of writing prompts from scratch every time, you type `/write-blog`, `/robots-audit`, or `/keyword-research` directly inside Claude Code and get a professional, structured result immediately.
+
+> **Never used Claude Code?** It's Anthropic's official AI assistant for the terminal. You work with AI directly from your command line — no browser needed. [Learn more →](https://www.npmjs.com/package/@anthropic-ai/claude-code)
 
 ---
 
 ## Requirements
 
-Before installing, make sure you have:
+| Tool | Install |
+|---|---|
+| **Node.js 16+** | [nodejs.org](https://nodejs.org) |
+| **Claude Code** | `npm install -g @anthropic-ai/claude-code` |
 
-1. **Node.js 16+** — [Download here](https://nodejs.org)
-   Check if installed: `node --version`
-
-2. **Claude Code** — Anthropic's AI CLI
-   Install: `npm install -g @anthropic-ai/claude-code`
-   Check if installed: `claude --version`
-
-Not sure if you have both? Run `seo-ai-tool check` after installing and it will tell you.
+Not sure if you have both? Run `seo-ai-tool check` after installing.
 
 ---
 
 ## Installation
 
 ```bash
-# Step 1 — Install the package globally
+# 1. Install the package globally
 npm install -g seo-ai-tool
 
-# Step 2 — Copy all prompts into Claude Code
+# 2. Copy all prompts into Claude Code
 seo-ai-tool install
 ```
 
@@ -47,28 +52,31 @@ That's it. All 50+ commands are now available inside Claude Code from any folder
 
 ## How to use a command
 
-Open any folder in your terminal, start Claude Code, and type a slash command:
+Start Claude Code in any project folder and type a slash command:
 
 ```bash
-# Start Claude Code in your project folder
+cd ~/projects/my-client
 claude
+```
 
-# Then inside Claude Code, type a command:
-/write-blog target keyword: "best crm for small business"
+```
+/write-blog primary keyword: "best crm for small business"
 
 /robots-audit
-# (then paste your robots.txt content when prompted)
+→ paste your robots.txt when prompted
 
 /keyword-research niche: "email marketing tools"
 ```
 
-If you run a command without providing any input, Claude will tell you exactly what information it needs. You never have to guess.
+> If you run a command without input, Claude will tell you exactly what it needs. You never have to guess.
 
 ---
 
 ## Available commands
 
-### Technical SEO
+<details>
+<summary><strong>🔧 Technical SEO (10 commands)</strong></summary>
+
 | Command | What it does |
 |---|---|
 | `/robots-audit` | Audit a robots.txt file for issues |
@@ -77,16 +85,20 @@ If you run a command without providing any input, Claude will tell you exactly w
 | `/canonical-audit` | Find canonical tag issues |
 | `/hreflang-audit` | Check hreflang implementation for international SEO |
 | `/cwv-diagnosis` | Diagnose Core Web Vitals problems |
-| `/redirect-map` | Generate a redirect map for migrations |
+| `/redirect-map` | Generate a redirect map for site migrations |
 | `/internal-links` | Audit internal linking structure |
 | `/server-logs` | Analyze server log files for crawl insights |
 | `/crawl-budget` | Identify crawl budget waste |
 
-### On-Page SEO
+</details>
+
+<details>
+<summary><strong>📝 On-Page SEO (8 commands)</strong></summary>
+
 | Command | What it does |
 |---|---|
 | `/title-rewrite` | Rewrite page titles for better CTR and rankings |
-| `/headings-audit` | Review heading structure (H1-H6) |
+| `/headings-audit` | Review heading structure (H1–H6) |
 | `/alt-text` | Write optimized alt text for images |
 | `/content-brief` | Create a full SEO content brief |
 | `/content-refresh` | Update and improve existing content |
@@ -94,7 +106,11 @@ If you run a command without providing any input, Claude will tell you exactly w
 | `/thin-content` | Identify and fix thin content issues |
 | `/meta-descriptions` | Write click-worthy meta descriptions |
 
-### Content & Link Building
+</details>
+
+<details>
+<summary><strong>✍️ Content & Link Building (10 commands)</strong></summary>
+
 | Command | What it does |
 |---|---|
 | `/keyword-research` | Full keyword research and clustering |
@@ -104,25 +120,37 @@ If you run a command without providing any input, Claude will tell you exactly w
 | `/content-calendar` | Build an SEO content calendar |
 | `/comparison-article` | Write a comparison/versus article |
 | `/outreach-email` | Write link building outreach emails |
-| `/brand-mention-pitch` | Turn unlinked mentions into backlinks |
+| `/brand-mention-pitch` | Turn unlinked brand mentions into backlinks |
 | `/press-release` | Write an SEO-friendly press release |
 | `/backlink-article` | Write content designed to earn backlinks |
 
-### Local SEO
+</details>
+
+<details>
+<summary><strong>📍 Local SEO (3 commands)</strong></summary>
+
 | Command | What it does |
 |---|---|
 | `/gbp-description` | Write a Google Business Profile description |
 | `/local-landing` | Create a local landing page |
 | `/review-responses` | Write professional responses to reviews |
 
-### E-commerce SEO
+</details>
+
+<details>
+<summary><strong>🛒 E-commerce SEO (3 commands)</strong></summary>
+
 | Command | What it does |
 |---|---|
-| `/product-description` | Write SEO product descriptions |
+| `/product-description` | Write SEO-optimized product descriptions |
 | `/category-page` | Optimize category page content |
 | `/product-schema` | Generate product structured data |
 
-### Analytics
+</details>
+
+<details>
+<summary><strong>📊 Analytics (6 commands)</strong></summary>
+
 | Command | What it does |
 |---|---|
 | `/ga4-traffic` | Analyze GA4 organic traffic data |
@@ -132,7 +160,11 @@ If you run a command without providing any input, Claude will tell you exactly w
 | `/gsc-links` | Analyze GSC link data |
 | `/gsc-performance` | Full GSC performance analysis |
 
-### Reporting & Analysis
+</details>
+
+<details>
+<summary><strong>📈 Reporting & Analysis (4 commands)</strong></summary>
+
 | Command | What it does |
 |---|---|
 | `/competitor-analysis` | Analyze a competitor's SEO strategy |
@@ -140,7 +172,11 @@ If you run a command without providing any input, Claude will tell you exactly w
 | `/monthly-report` | Generate a monthly SEO report |
 | `/penalty-diagnosis` | Diagnose a potential Google penalty |
 
-### GEO / LLM Optimization
+</details>
+
+<details>
+<summary><strong>🤖 GEO / LLM Optimization (5 commands)</strong></summary>
+
 | Command | What it does |
 |---|---|
 | `/geo-audit` | Audit content for AI/LLM visibility |
@@ -149,135 +185,35 @@ If you run a command without providing any input, Claude will tell you exactly w
 | `/geo-visibility` | Improve visibility in generative search |
 | `/geo-citations` | Build citation-worthy content |
 
-### Agents
+</details>
+
+<details>
+<summary><strong>⚡ Agents (1 command)</strong></summary>
+
 | Command | What it does |
 |---|---|
 | `/agent-monthly-report` | Autonomous agent that generates a full monthly SEO report |
 
----
-
-## Working with client data
-
-Many commands can analyze real data you provide. Just drop your files into a `data/` folder in your project and reference them when running the command.
-
-```
-my-client-project/
-└── data/
-    ├── gsc-performance.csv      ← use with /gsc-performance
-    ├── ga4-organic.csv          ← use with /ga4-traffic
-    ├── screaming-frog-export.csv ← use with /internal-links
-    └── pagespeed-screenshot.png  ← use with /cwv-diagnosis
-```
-
----
-
-## Brand voice
-
-If you create a `brand-voice.md` file in your project folder, all content commands will read it automatically and match the brand's tone, vocabulary, and style.
-
-```
-my-client-project/
-├── brand-voice.md    ← Claude reads this automatically
-└── data/
-```
-
-Your `brand-voice.md` can include things like:
-- Tone of voice (formal, casual, bold, friendly)
-- Words and phrases to use or avoid
-- Target audience description
-- Example sentences that match the brand style
-
----
-
-## Saving outputs
-
-After running any command, save the output to an `outputs/` folder for reference:
-
-```
-my-client-project/
-├── brand-voice.md
-├── data/
-└── outputs/
-    ├── keyword-research-2026-02.md
-    ├── write-blog-best-crm-2026-02.md
-    └── robots-audit-2026-02.md
-```
-
----
-
-## Customize prompts for a specific client
-
-The global prompts work for general use, but sometimes you want to tweak a prompt for a specific client or project. The local override system makes this easy — no global prompts are changed.
-
-### How it works
-
-Claude Code reads commands in this priority order:
-
-```
-.claude/commands/write-blog.md     ← local version (wins if it exists)
-~/.claude/commands/write-blog.md   ← global version (fallback)
-```
-
-### Set it up
-
-```bash
-# Go to your client project folder
-cd ~/projects/acme-client
-
-# Create the local overrides folder
-seo-ai-tool init
-
-# Copy the prompt you want to customize
-cp ~/.claude/commands/write-blog.md .claude/commands/write-blog.md
-
-# Edit it to fit the client's needs
-```
-
-Commit `.claude/commands/` to git and your whole team automatically shares the same customized prompts.
-
----
-
-## CLI reference
-
-```
-seo-ai-tool install     Copy all prompts to ~/.claude/commands/ (global)
-seo-ai-tool update      Update global prompts to the latest version
-seo-ai-tool init        Create .claude/commands/ in the current project for local overrides
-seo-ai-tool list        List all available prompts by category
-seo-ai-tool check       Check if Claude Code and Gemini CLI are installed
-seo-ai-tool uninstall   Remove all prompts from ~/.claude/commands/
-seo-ai-tool help        Show help
-```
-
----
-
-## Updating
-
-When a new version is released:
-
-```bash
-npm update -g seo-ai-tool
-seo-ai-tool update
-```
+</details>
 
 ---
 
 ## Real-world example
 
-Let's say you are an SEO consultant with two clients. Here is the full workflow from zero to running commands.
+> You are an SEO consultant with two clients. Here's the full workflow from zero to running commands.
 
-### Your folder structure
+### Folder structure
 
 ```
 ~/projects/
-├── project1/          ← Client 1: an e-commerce store
+├── project1/                      ← Client 1: an e-commerce store
 │   ├── brand-voice.md
 │   ├── data/
 │   │   ├── gsc-performance.csv
 │   │   ├── ga4-organic.csv
 │   │   └── screaming-frog-export.csv
 │   └── outputs/
-└── project2/          ← Client 2: a local service business
+└── project2/                      ← Client 2: a local service business
     ├── brand-voice.md
     ├── data/
     │   └── gsc-performance.csv
@@ -286,14 +222,14 @@ Let's say you are an SEO consultant with two clients. Here is the full workflow 
 
 ---
 
-### Step 1 — Install seo-ai-tool globally (do this once, ever)
+### Step 1 — Install globally (once, ever)
 
 ```bash
 npm install -g seo-ai-tool
 seo-ai-tool install
 ```
 
-This installs all 50+ commands globally. They are now available in every folder on your computer.
+All 50+ commands are now available everywhere on your machine.
 
 ---
 
@@ -301,44 +237,42 @@ This installs all 50+ commands globally. They are now available in every folder 
 
 ```bash
 cd ~/projects/project1
-
-# Create the local overrides folder and a README explaining the system
 seo-ai-tool init
 ```
 
-This creates a `.claude/commands/` folder inside `project1`. Any prompt you place here will override the global version — only for this project.
+This creates a `.claude/commands/` folder inside `project1`. Any prompt you place here overrides the global version — for this project only.
 
 ---
 
 ### Step 3 — Add your client data
 
-Export your data from Google Search Console, GA4, or Screaming Frog and drop the files into `data/`:
+Export files from GSC, GA4, or Screaming Frog and drop them into `data/`:
 
 ```
 project1/
 └── data/
-    ├── gsc-performance.csv       ← exported from Google Search Console
-    ├── ga4-organic.csv           ← exported from GA4 → Acquisition → Organic
-    └── screaming-frog-export.csv ← exported from Screaming Frog → Internal tab
+    ├── gsc-performance.csv        ← from Google Search Console
+    ├── ga4-organic.csv            ← from GA4 → Acquisition → Organic
+    └── screaming-frog-export.csv  ← from Screaming Frog → Internal tab
 ```
 
 ---
 
-### Step 4 — Add a brand voice file (optional but recommended)
+### Step 4 — Add a brand voice file
 
-Create `brand-voice.md` in the project root and describe the client's tone:
+Create `brand-voice.md` in the project root:
 
 ```markdown
 # Brand Voice — Project1
 
 - Tone: friendly, confident, never salesy
-- Audience: small business owners aged 30-50
+- Audience: small business owners aged 30–50
 - Avoid: jargon, passive voice, filler phrases like "In conclusion"
 - Always use: "you" to address the reader directly
-- Example sentence: "Here's exactly what you need to do to rank higher this month."
+- Example: "Here's exactly what you need to do to rank higher this month."
 ```
 
-All content commands (`/write-blog`, `/product-description`, etc.) will read this file automatically.
+> All content commands will read this file automatically and match the tone.
 
 ---
 
@@ -349,23 +283,17 @@ cd ~/projects/project1
 claude
 ```
 
-Now inside Claude Code, start running commands:
-
-**Analyze your GSC data:**
-```
-/gsc-performance
-```
-Then paste the contents of `data/gsc-performance.csv` when prompted — or just tell Claude:
+**Analyze GSC data:**
 ```
 /gsc-performance data/gsc-performance.csv
 ```
 
-**Write a blog post (respects brand voice automatically):**
+**Write a blog post (brand voice applied automatically):**
 ```
-/write-blog primary keyword: "best running shoes for flat feet", secondary keywords: "flat feet running, motion control shoes"
+/write-blog primary keyword: "best running shoes for flat feet"
 ```
 
-**Run a full site audit:**
+**Audit internal links:**
 ```
 /internal-links data/screaming-frog-export.csv
 ```
@@ -385,13 +313,13 @@ After each command, ask Claude to save the result:
 Save the output to outputs/gsc-performance-2026-02.md
 ```
 
-Your project folder now looks like this:
+Your project folder ends up looking like this:
 
 ```
 project1/
 ├── brand-voice.md
 ├── .claude/
-│   └── commands/          ← customized prompts for this client (if any)
+│   └── commands/                  ← customized prompts for this client
 ├── data/
 │   ├── gsc-performance.csv
 │   ├── ga4-organic.csv
@@ -406,8 +334,6 @@ project1/
 
 ### Step 7 — Customize a prompt for this client (optional)
 
-If you want the `/write-blog` command to always use a specific structure for this client:
-
 ```bash
 # Copy the global prompt into the project
 cp ~/.claude/commands/write-blog.md ~/projects/project1/.claude/commands/write-blog.md
@@ -415,9 +341,43 @@ cp ~/.claude/commands/write-blog.md ~/projects/project1/.claude/commands/write-b
 # Edit it to add client-specific rules
 ```
 
-Now `/write-blog` behaves differently in `project1` but stays the same everywhere else.
+`/write-blog` now behaves differently in `project1` but stays unchanged everywhere else. When you switch to `project2`, the global version is used — until you set up overrides there too.
 
-When you switch to `project2`, the global version is used — until you set up overrides there too.
+---
+
+## Customize prompts per project
+
+Claude Code reads commands in this priority order:
+
+```
+.claude/commands/write-blog.md     ← local version (wins if it exists)
+~/.claude/commands/write-blog.md   ← global version (fallback)
+```
+
+Commit `.claude/commands/` to git and your whole team automatically shares the same customized prompts.
+
+---
+
+## CLI reference
+
+| Command | Description |
+|---|---|
+| `seo-ai-tool install` | Copy all prompts to `~/.claude/commands/` |
+| `seo-ai-tool update` | Update global prompts to the latest version |
+| `seo-ai-tool init` | Create `.claude/commands/` in the current project |
+| `seo-ai-tool list` | List all prompts by category |
+| `seo-ai-tool check` | Check if Claude Code and Gemini CLI are installed |
+| `seo-ai-tool uninstall` | Remove all prompts from `~/.claude/commands/` |
+| `seo-ai-tool help` | Show help |
+
+---
+
+## Updating
+
+```bash
+npm update -g seo-ai-tool
+seo-ai-tool update
+```
 
 ---
 
