@@ -1,7 +1,19 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills config user.name \"nikkos\")",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills config user.email \"nlampr@gmail.com\")",
+      "WebFetch(domain:developers.google.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills add mcp.json.example .gitignore)",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills commit -m \"Add MCP configuration example with GA4 and GSC\")",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills push)",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills add README.md)",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills commit -m \"Update README formatting and punctuation\")",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills add -A)",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills commit -m \"Remove nap-consistency-checker prompt and all references\")"
     ]
   }
 }

@@ -59,7 +59,6 @@ The GA4 data is in data/ga4-export.csv. Site: acme.com. Period: last 3 months vs
 - `google-business-profile-description.md` — write 3 GBP description variants with optimization checklist
 - `local-landing-page-writer.md` — write a local landing page for a service + city combination
 - `review-response-templates.md` — generate a library of 12 review response templates
-- `nap-consistency-checker.md` — audit NAP data across directories for inconsistencies
 
 ### E-commerce SEO — `skills/ecommerce-seo/`
 

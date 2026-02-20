@@ -11,7 +11,7 @@ Quick reference by category:
 - **Technical SEO:** `/robots-audit` `/sitemap-audit` `/schema-generator` `/canonical-audit` `/hreflang-audit` `/cwv-diagnosis` `/redirect-map` `/internal-links` `/server-logs`
 - **On-Page SEO:** `/title-rewrite` `/headings-audit` `/alt-text` `/content-brief` `/content-refresh` `/faq-generator` `/thin-content` `/meta-descriptions`
 - **Content & Links:** `/keyword-research` `/write-blog` `/pillar-page` `/topic-cluster` `/content-calendar` `/comparison-article` `/outreach-email` `/brand-mention-pitch` `/press-release` `/backlink-article`
-- **Local SEO:** `/gbp-description` `/local-landing` `/review-responses` `/nap-checker`
+- **Local SEO:** `/gbp-description` `/local-landing` `/review-responses`
 - **E-commerce:** `/product-description` `/category-page` `/product-schema`
 - **Analytics:** `/ga4-traffic` `/ga4-conversions` `/ga4-content` `/gsc-indexing` `/gsc-links`
 - **Reporting:** `/competitor-analysis` `/content-gap` `/gsc-performance` `/monthly-report` `/penalty-diagnosis`

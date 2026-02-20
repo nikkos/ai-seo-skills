@@ -123,7 +123,7 @@ Output is saved automatically to `outputs/` after each command.
 | Technical SEO | `/robots-audit` `/sitemap-audit` `/schema-generator` `/canonical-audit` `/hreflang-audit` `/cwv-diagnosis` `/redirect-map` `/internal-links` `/server-logs` |
 | On-Page SEO | `/title-rewrite` `/headings-audit` `/alt-text` `/content-brief` `/content-refresh` `/faq-generator` `/thin-content` `/meta-descriptions` |
 | Content & Links | `/keyword-research` `/write-blog` `/pillar-page` `/topic-cluster` `/content-calendar` `/comparison-article` `/outreach-email` `/brand-mention-pitch` `/press-release` `/backlink-article` |
-| Local SEO | `/gbp-description` `/local-landing` `/review-responses` `/nap-checker` |
+| Local SEO | `/gbp-description` `/local-landing` `/review-responses` |
 | E-commerce | `/product-description` `/category-page` `/product-schema` |
 | Analytics | `/ga4-traffic` `/ga4-conversions` `/ga4-content` `/gsc-indexing` `/gsc-links` |
 | Reporting | `/competitor-analysis` `/content-gap` `/gsc-performance` `/monthly-report` `/penalty-diagnosis` |
@@ -376,7 +376,6 @@ A ready-to-use template is included in the repo as `mcp-example.json`. Copy it t
 | `google-business-profile-description.md` | Writes 3 GBP description variants optimized for local keywords and Google's 750-character limit, plus a GBP optimization checklist. | Google Business Profile dashboard | `/gbp-description` |
 | `local-landing-page-writer.md` | Writes a complete local landing page (600–1,000 words) for a service + city combination with FAQ, LocalBusiness schema placeholder, and on-page SEO block. | Internal business data (no export needed) | `/local-landing` |
 | `review-response-templates.md` | Produces a library of 12 review response templates covering 5-star, 3-star, and 1–2 star reviews, with local keyword integration. | Google Business Profile · Yelp dashboard | `/review-responses` |
-| `nap-consistency-checker.md` | Audits NAP data across directories for inconsistencies, duplicates, and missing citations. Produces a correction table and top 10 citation source recommendations. | BrightLocal · Moz Local · manual directory search | `/nap-checker` |
 
 ---
 
