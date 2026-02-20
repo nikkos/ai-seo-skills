@@ -13,7 +13,25 @@
       "Bash(git -C /Users/nikos/Dev/ai-seo-skills add README.md)",
       "Bash(git -C /Users/nikos/Dev/ai-seo-skills commit -m \"Update README formatting and punctuation\")",
       "Bash(git -C /Users/nikos/Dev/ai-seo-skills add -A)",
-      "Bash(git -C /Users/nikos/Dev/ai-seo-skills commit -m \"Remove nap-consistency-checker prompt and all references\")"
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills commit -m \"Remove nap-consistency-checker prompt and all references\")",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills commit -m \"Add Cursor, Windsurf and Antigravity usage section to README\")",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills commit -m \"Add links to Cursor, Windsurf and Antigravity\")",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills add chatgpt.md README.md)",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills commit -m \"Add ChatGPT Projects support with chatgpt.md and README section\")",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills commit -m \"Add token usage warning for analytics MCPs in README\")",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills add LICENSE)",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills commit -m \"Add MIT license\")",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills add CONTRIBUTING.md)",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills commit -m \"Add CONTRIBUTING.md\")",
+      "Bash(chmod:*)",
+      "Bash(python3:*)",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills add sync.sh)",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills commit -m \"Add sync.sh to sync skills/ to .claude/commands/\")",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills add brand-voice.md)",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills commit -m \"Improve brand-voice.md template with realistic examples and instructions\")",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills tag -a v1.0.0 -m \"Initial release — 48 SEO prompts for Claude Code, Gemini CLI, and ChatGPT\")",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills push origin v1.0.0)",
+      "Bash(git -C /Users/nikos/Dev/ai-seo-skills commit -m \"Add crawl budget analysis prompt and update all references\")"
     ]
   }
 }

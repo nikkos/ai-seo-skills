@@ -64,6 +64,7 @@ SKILL_TO_COMMAND = {
     "reporting-analysis/google-search-console-analysis.md": "gsc-performance.md",
     "reporting-analysis/monthly-report-writer.md":       "monthly-report.md",
     "reporting-analysis/penalty-diagnosis.md":           "penalty-diagnosis.md",
+    "technical-seo/crawl-budget-analysis.md":             "crawl-budget.md",
     "technical-seo/canonical-tags-audit.md":             "canonical-audit.md",
     "technical-seo/check-server-app-logs.md":            "server-logs.md",
     "technical-seo/core-web-vitals-diagnosis.md":        "cwv-diagnosis.md",

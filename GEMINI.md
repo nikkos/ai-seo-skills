@@ -29,6 +29,7 @@ The GA4 data is in data/ga4-export.csv. Site: acme.com. Period: last 3 months vs
 - `redirect-map-generator.md` — generate redirect maps and server config rules
 - `internal-linking-audit.md` — audit internal link structure for orphaned pages and anchor text issues
 - `check-server-app-logs.md` — analyze server logs for 404s, 5xx errors, and crawl waste
+- `crawl-budget-analysis.md` — analyze crawl budget waste and produce a prioritized crawl efficiency action plan
 
 ### On-Page SEO — `skills/on-page-seo/`
 

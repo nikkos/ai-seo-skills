@@ -40,6 +40,7 @@ Primary keyword: "project management software", audience: SMB owners, site: acme
 - `redirect-map-generator` — generate redirect maps and server config rules
 - `internal-linking-audit` — audit internal link structure for orphaned pages
 - `check-server-app-logs` — analyze server logs for 404s, crawl waste, and Googlebot anomalies
+- `crawl-budget-analysis` — analyze crawl budget waste and produce a prioritized crawl efficiency action plan
 
 ### On-Page SEO
 - `title-tag-rewrite` — rewrite title tags for improved CTR and keyword placement

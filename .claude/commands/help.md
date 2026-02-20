@@ -12,6 +12,7 @@ The commands are:
 - `/redirect-map` — Generate a redirect map CSV and server config rules (Apache, Nginx, Cloudflare)
 - `/internal-links` — Audit internal link structure for orphaned pages and anchor text issues
 - `/server-logs` — Analyze server/app logs for 404s, crawl waste, and Googlebot anomalies
+- `/crawl-budget` — Analyze crawl budget waste and produce a prioritized crawl efficiency action plan
 
 ## On-Page SEO
 - `/title-rewrite` — Rewrite title tags with two variants and character counts

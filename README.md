@@ -122,7 +122,7 @@ Output is saved automatically to `outputs/` after each command.
 
 | Category | Commands |
 |---|---|
-| Technical SEO | `/robots-audit` `/sitemap-audit` `/schema-generator` `/canonical-audit` `/hreflang-audit` `/cwv-diagnosis` `/redirect-map` `/internal-links` `/server-logs` |
+| Technical SEO | `/robots-audit` `/sitemap-audit` `/schema-generator` `/canonical-audit` `/hreflang-audit` `/cwv-diagnosis` `/redirect-map` `/internal-links` `/server-logs` `/crawl-budget` |
 | On-Page SEO | `/title-rewrite` `/headings-audit` `/alt-text` `/content-brief` `/content-refresh` `/faq-generator` `/thin-content` `/meta-descriptions` |
 | Content & Links | `/keyword-research` `/write-blog` `/pillar-page` `/topic-cluster` `/content-calendar` `/comparison-article` `/outreach-email` `/brand-mention-pitch` `/press-release` `/backlink-article` |
 | Local SEO | `/gbp-description` `/local-landing` `/review-responses` |
@@ -397,6 +397,7 @@ A ready-to-use template is included in the repo as `mcp-example.json`. Copy it t
 | `redirect-map-generator.md` | Generates a redirect map CSV and server config rules (Apache, Nginx, Cloudflare) from old/new URL pairs. Detects chains, loops, and backlink-critical URLs. | Migration spreadsheet · Screaming Frog (old site crawl) | `/redirect-map` |
 | `internal-linking-audit.md` | Audits internal link structure for orphaned pages, poor anchor text, broken links, and topic cluster gaps. Produces a quick-win link recommendations table. | Screaming Frog · Sitebulb · Ahrefs Site Audit | `/internal-links` |
 | `check-server-app-logs.md` | Analyzes server and application logs for SEO-impacting issues: 404s, 5xx errors, redirect chains, crawl waste, and Googlebot anomalies. | Server / hosting panel (Nginx · Apache · Cloudflare logs) | `/server-logs` |
+| `crawl-budget-analysis.md` | Analyzes crawl log data to identify budget waste (faceted URLs, duplicate parameters, thin pages), undercrawled priority pages, and produces a prioritized action plan table with severity labels. | Server log export · Screaming Frog log analyzer · GSC Coverage report | `/crawl-budget` |
 
 ---
 
