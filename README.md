@@ -1,117 +1,24 @@
-# 🔍 AI SEO Skills
+# seo-ai-tool
 
-A library of professional SEO prompts that run as slash commands in Claude Code, or as reference files in Gemini CLI, ChatGPT, Cursor, and Windsurf.
+50+ professional SEO prompt commands for Claude Code. Install once, use everywhere.
 
-Instead of writing prompts from scratch, you type a command and a structured expert prompt runs instantly with your context. Outputs are saved automatically.
-
----
-
-## 📋 Table of Contents
-
-- [Pick your tool](#-pick-your-tool)
-- [Quick start](#-quick-start)
-  - [Claude Code](#1-claude-code-recommended)
-  - [Gemini CLI](#2-gemini-cli)
-  - [ChatGPT](#3-chatgpt)
-  - [Cursor, Windsurf & Antigravity](#4-cursor-windsurf--antigravity)
-  - [MCP Servers](#5-mcp-servers-advanced)
-- [Brand voice](#-brand-voice)
-- [Working with data](#-working-with-data)
-- [Prompt workflows](#-prompt-workflows)
-- [Prompt Reference](#-prompt-reference)
-- [Agents](#-agents)
-- [Adding a New Skill](#-adding-a-new-skill)
-- [Contributing](#-contributing)
-- [Disclaimer](#️-disclaimer)
-
----
-
-## 🛠 Pick your tool
-
-| Tool | Best for | What to install |
-|---|---|---|
-| **Claude Code** | Fastest workflow — slash commands, auto-saves output | [Claude Code](https://docs.anthropic.com/claude-code) |
-| **Gemini CLI** | Works great with the Read approach | [Gemini CLI](https://github.com/google-gemini/gemini-cli) |
-| **ChatGPT** | No install — use inside a ChatGPT Project | Nothing |
-| **Cursor** | AI code editor with file referencing | [Cursor](https://cursor.com) |
-| **Windsurf** | AI code editor with Cascade assistant | [Windsurf](https://windsurf.com) |
-| **Antigravity** | IDE-style interface | [Antigravity](https://antigravity.google) |
-
----
-
-## 🚀 Quick start
-
-### 1. Claude Code (recommended)
-
-**Step 1 — Install Claude Code:**
+## Install
 
 ```bash
-npm install -g @anthropic-ai/claude-code
+npm install -g seo-ai-tool
+seo-ai-tool install
 ```
 
-**Step 2 — Clone this repo:**
+That's it. All commands are now available as Claude Code slash commands from any folder.
 
-```bash
-git clone https://github.com/nikkos/ai-seo-skills.git
-cd ai-seo-skills
-```
+## Requirements
 
-**Step 3 — Run the global setup script (one time only):**
+- [Node.js](https://nodejs.org) 16+
+- [Claude Code](https://www.npmjs.com/package/@anthropic-ai/claude-code) — `npm install -g @anthropic-ai/claude-code`
 
-```bash
-./setup.sh
-```
+Run `seo-ai-tool check` to verify both are installed.
 
-This symlinks the slash commands globally and installs `CLAUDE.md` so Claude has full context from any folder on your machine.
-
-**Step 4 — Create a client project:**
-
-```bash
-./new-client.sh acme-corp
-# or specify a path:
-./new-client.sh acme-corp ~/projects
-```
-
-This creates a ready-to-use folder:
-
-```
-acme-corp/
-├── brand-voice.md   ← fill this in
-├── data/            ← drop CSV exports, screenshots, logs here
-└── outputs/         ← AI outputs saved here automatically
-```
-
-**Step 5 — Fill in `brand-voice.md`, then start working:**
-
-```bash
-cd acme-corp
-claude
-```
-
-**Run a command:**
-
-```
-/robots-audit [paste robots.txt here]
-
-/write-blog primary keyword: "project management software", audience: SMB owners, site: acme.com
-
-/gsc-performance GSC data in data/gsc-queries.csv. Site: acme.com. Last 3 months vs prior 3.
-```
-
-**Not sure what a command needs? Run it with no arguments:**
-
-```
-/gsc-performance
-```
-
-Claude will respond with a bullet list of exactly what to provide, then stop.
-
-**See all available commands:**
-```
-/help
-```
-
-**All commands at a glance:**
+## Available commands
 
 | Category | Commands |
 |---|---|
@@ -120,401 +27,66 @@ Claude will respond with a bullet list of exactly what to provide, then stop.
 | Content & Links | `/keyword-research` `/write-blog` `/pillar-page` `/topic-cluster` `/content-calendar` `/comparison-article` `/outreach-email` `/brand-mention-pitch` `/press-release` `/backlink-article` |
 | Local SEO | `/gbp-description` `/local-landing` `/review-responses` |
 | E-commerce | `/product-description` `/category-page` `/product-schema` |
-| Analytics | `/ga4-traffic` `/ga4-conversions` `/ga4-content` `/gsc-indexing` `/gsc-links` |
-| Reporting | `/competitor-analysis` `/content-gap` `/gsc-performance` `/monthly-report` `/penalty-diagnosis` |
+| Analytics | `/ga4-traffic` `/ga4-conversions` `/ga4-content` `/gsc-indexing` `/gsc-links` `/gsc-performance` |
+| Reporting | `/competitor-analysis` `/content-gap` `/monthly-report` `/penalty-diagnosis` |
 | GEO / LLM | `/geo-audit` `/geo-rewrite` `/geo-entity` `/geo-visibility` `/geo-citations` |
 | Agents | `/agent-monthly-report` |
 
----
+Run `seo-ai-tool list` to see all commands in the terminal.
 
-### 2. Gemini CLI
+## Customize prompts per project
 
-**Install Gemini CLI:**
+Global prompts work everywhere, but sometimes you need a client-specific version of a prompt. The local override system makes this easy.
+
+### How it works
+
+Claude Code reads commands in this priority order:
+
+```
+.claude/commands/write-blog.md     ← local (wins if exists)
+~/.claude/commands/write-blog.md   ← global (fallback)
+```
+
+### Set up local overrides
 
 ```bash
-npm install -g @google/gemini-cli
+# In your client project folder
+cd ~/projects/acme-client
+seo-ai-tool init
+
+# Copy the prompt you want to customize
+cp ~/.claude/commands/write-blog.md .claude/commands/write-blog.md
+
+# Edit it to match the client's tone, brand, or requirements
 ```
 
-**Clone this repo and open it:**
+Commit `.claude/commands/` to git and your whole team shares the same customized prompts automatically.
+
+## CLI reference
+
+```
+seo-ai-tool install     Copy all prompts to ~/.claude/commands/ (global)
+seo-ai-tool update      Update global prompts to the latest version
+seo-ai-tool init        Create .claude/commands/ in current project
+seo-ai-tool list        List all prompts by category
+seo-ai-tool check       Check if Claude Code and Gemini CLI are installed
+seo-ai-tool uninstall   Remove all prompts from ~/.claude/commands/
+seo-ai-tool help        Show help
+```
+
+## Update
 
 ```bash
-git clone https://github.com/nikkos/ai-seo-skills.git
-cd ai-seo-skills
-gemini
+npm update -g seo-ai-tool
+seo-ai-tool update
 ```
 
-Gemini reads `GEMINI.md` automatically and knows all available skills.
+## Tips
 
-**Run a prompt using the Read approach:**
+- Place a `brand-voice.md` file in your project root — content commands will read it automatically and match the brand's tone
+- Store client data exports in a `data/` folder — audit commands will find them there
+- Save outputs to an `outputs/` folder with descriptive filenames for easy reference
 
-```
-Read skills/technical-seo/robots-audit.md and follow its instructions.
-[paste robots.txt here]
-```
+## License
 
-```
-Read skills/analytics/ga4-traffic.md and follow its instructions.
-The GA4 data is in data/ga4-export.csv. Site: acme.com. Period: last 3 months vs prior 3 months.
-```
-
-With brand voice:
-```
-Read brand-voice.md and then read skills/content-link-building/write-blog.md and follow its instructions.
-Primary keyword: "email marketing", site: acme.com
-```
-
----
-
-### 3. ChatGPT
-
-No installation needed. Use inside a **ChatGPT Project**.
-
-**One-time setup:**
-
-1. Create a new ChatGPT Project
-2. Go to **Instructions** and paste the contents of `chatgpt.md` from this repo
-3. Upload the skill files you need from `skills/` into the project **Knowledge**
-4. Optionally upload `brand-voice.md` so tone and language apply automatically
-
-**Run a prompt:**
-
-```
-Use the robots-audit skill and audit this robots.txt:
-[paste robots.txt here]
-```
-
-```
-Use the ga4-traffic skill.
-The GA4 data is attached. Site: acme.com. Period: last 3 months vs prior 3 months.
-```
-
-For data files, attach the CSV directly to the chat message.
-
----
-
-### 4. Cursor, Windsurf & Antigravity
-
-Open the repo as your workspace and reference skill files directly in the chat panel.
-
-**[Cursor](https://cursor.com)** — use the chat (`Cmd+L`):
-```
-@skills/technical-seo/robots-audit.md follow the instructions in this file.
-[paste robots.txt here]
-```
-
-**[Windsurf](https://windsurf.com)** — use Cascade:
-```
-Read skills/reporting-analysis/gsc-performance.md and follow its instructions.
-GSC data: data/gsc-queries.csv. Site: acme.com. Period: last 3 months.
-```
-
-**[Antigravity](https://antigravity.google):**
-```
-Read brand-voice.md and then read skills/content-link-building/write-blog.md and follow its instructions.
-Primary keyword: "email marketing", site: acme.com
-```
-
----
-
-### 5. MCP Servers (advanced)
-
-MCP servers give Claude live access to GA4, Search Console, web pages, and your local files — no CSV exports needed.
-
-**Recommended for SEO:**
-
-| Server | Enables |
-|---|---|
-| `server-fetch` | Fetch live pages, check status codes |
-| `server-filesystem` | Read/write local files |
-| `analytics-mcp` | Pull GA4 data live via API |
-| `mcp-server-gsc` | Pull GSC data live via API |
-
-Copy `mcp-example.json` to `mcp.json`, fill in your credentials, and you're set.
-
-> ⚠️ **Token warning:** Analytics MCPs can pull large amounts of data fast. Always specify date range, metrics, and dimensions. Instead of "pull all my GA4 data", say:
-> ```
-> Pull organic traffic by landing page for acme.com from 2026-01-01 to 2026-01-31.
-> ```
-
-<details>
-<summary>Full MCP configuration example</summary>
-
-```json
-{
-  "mcpServers": {
-    "fetch": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-fetch"]
-    },
-    "filesystem": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/ai-seo-skills"]
-    },
-    "google-analytics": {
-      "command": "pipx",
-      "args": ["run", "analytics-mcp"],
-      "env": {
-        "GOOGLE_APPLICATION_CREDENTIALS": "/path/to/service-account-key.json",
-        "GOOGLE_PROJECT_ID": "YOUR_GOOGLE_CLOUD_PROJECT_ID"
-      }
-    },
-    "google-search-console": {
-      "command": "npx",
-      "args": ["-y", "mcp-server-gsc"],
-      "env": {
-        "GOOGLE_APPLICATION_CREDENTIALS": "/path/to/service-account-key.json"
-      }
-    }
-  }
-}
-```
-
-> **Note:** `analytics-mcp` requires Python 3.10+ and `pipx`. `mcp-server-gsc` requires Node.js 18+.
-
-</details>
-
----
-
-## 🎨 Brand voice
-
-Fill in `brand-voice.md` with your client's tone, vocabulary, and language. All content prompts read it automatically.
-
-The most important field is **Content language** — set it to Greek, Spanish, French, or any language and every prompt outputs in that language without any extra instruction.
-
-Copy `brand-voice.md` into your client folder and fill it in before running content prompts. The file includes examples to guide you.
-
----
-
-## 📂 Working with data
-
-Drop client data files into the `data/` folder before running analytics or audit prompts.
-
-| Source | How to export |
-|---|---|
-| Google Search Console | Performance → Export CSV (Queries and Pages tabs) |
-| GA4 | Reports → Acquisition → Landing page → Export CSV |
-| Screaming Frog | File → Export → choose the relevant tab |
-| Ahrefs / Semrush | Export button on any report |
-
-Common patterns:
-
-| File | Use with |
-|---|---|
-| `data/gsc-*.csv` | `/gsc-performance` · `/gsc-indexing` |
-| `data/ga4-*.csv` | `/ga4-traffic` · `/ga4-content` · `/ga4-conversions` |
-| `data/screaming-frog-*.csv` | `/internal-links` · `/canonical-audit` |
-| `data/server-logs*` | `/server-logs` · `/crawl-budget` |
-| `data/*.png` / `data/*.jpg` | Screenshots for any visual audit |
-
-Outputs are saved automatically to `outputs/` with a descriptive filename after every command.
-
----
-
-## 🔗 Prompt workflows
-
-Prompts are designed to feed into each other.
-
-**Content:**
-```
-/keyword-research → /topic-cluster → /content-brief → /pillar-page → /faq-generator → /schema-generator
-```
-
-**Analytics:**
-```
-/ga4-traffic → /ga4-content → /content-refresh (declining) · /thin-content (low quality)
-```
-
-**Audit:**
-```
-/gsc-indexing + /gsc-links → /internal-links → /monthly-report
-```
-
-**GEO:**
-```
-/geo-visibility → /geo-citations → /geo-entity → /geo-rewrite → /geo-audit
-```
-
----
-
-## 📂 Prompt Reference
-
-### ⚙️ Technical SEO
-
-| Prompt | What it does | Get data from | Command |
-|---|---|---|---|
-| `robots-audit.md` | Audits robots.txt for blocked resources, syntax errors, and missing sitemap directives. Returns severity-labeled findings and a corrected robots.txt. | `yoursite.com/robots.txt` | `/robots-audit` |
-| `sitemap-audit.md` | Audits XML sitemaps for non-200 URLs, noindex conflicts, and structural issues. Produces a health score and corrected XML. | `yoursite.com/sitemap.xml` · GSC Coverage report | `/sitemap-audit` |
-| `schema-generator.md` | Generates valid JSON-LD for any schema type with a rich result eligibility checklist. | Page content (no export needed) | `/schema-generator` |
-| `canonical-audit.md` | Audits canonical tags for chains, conflicts, and HTTP/HTTPS mismatches. | Screaming Frog · Sitebulb · Ahrefs | `/canonical-audit` |
-| `hreflang-audit.md` | Audits hreflang annotations for missing return links and incorrect BCP 47 codes. | Screaming Frog (Hreflang tab) · Sitebulb | `/hreflang-audit` |
-| `cwv-diagnosis.md` | Diagnoses LCP, INP, and CLS failures with root-cause analysis and a developer handoff checklist. | PageSpeed Insights · GSC Core Web Vitals | `/cwv-diagnosis` |
-| `redirect-map.md` | Generates a redirect map CSV and server config rules (Apache, Nginx, Cloudflare). | Migration spreadsheet · Screaming Frog | `/redirect-map` |
-| `internal-links.md` | Audits internal link structure for orphaned pages, poor anchor text, and topic cluster gaps. | Screaming Frog · Sitebulb · Ahrefs | `/internal-links` |
-| `server-logs.md` | Analyzes server logs for 404s, 5xx errors, redirect chains, and Googlebot anomalies. | Nginx · Apache · Cloudflare logs | `/server-logs` |
-| `crawl-budget.md` | Identifies crawl waste (faceted URLs, duplicate parameters, thin pages) and undercrawled priority pages. | Server log export · Screaming Frog · GSC Coverage | `/crawl-budget` |
-
----
-
-### 📄 On-Page SEO
-
-| Prompt | What it does | Get data from | Command |
-|---|---|---|---|
-| `title-rewrite.md` | Rewrites title tags for CTR and keyword placement. Two variants per title with character counts. | Screaming Frog · GSC Performance | `/title-rewrite` |
-| `headings-audit.md` | Audits H1–H3 structure and outputs a fully optimized heading outline. | Screaming Frog (H1/H2 reports) · view-source | `/headings-audit` |
-| `alt-text.md` | Generates SEO-optimized, accessibility-compliant alt text. | Screaming Frog (Images tab) · Sitebulb | `/alt-text` |
-| `content-brief.md` | Creates a writer-ready content brief: intent, heading outline, subtopics, SEO specs, and internal linking plan. | Ahrefs · Semrush · Google SERP | `/content-brief` |
-| `content-refresh.md` | Section-by-section refresh plan (KEEP / UPDATE / EXPAND / CUT / ADD NEW) with rewritten sections. | Existing article (paste directly) · GSC Performance | `/content-refresh` |
-| `faq-generator.md` | Generates a PAA-targeted FAQ section with 6–12 Q&As and FAQPage JSON-LD. | Google PAA · AlsoAsked · AnswerThePublic | `/faq-generator` |
-| `thin-content.md` | Diagnoses why a page is thin and rewrites it into comprehensive, intent-matched content. | Screaming Frog (word count) · GSC low-traffic pages | `/thin-content` |
-| `meta-descriptions.md` | Generates click-optimized meta descriptions (150–160 characters) with keyword and CTA. | Screaming Frog · GSC | `/meta-descriptions` |
-
----
-
-### ✍️ Content & Link Building
-
-| Prompt | What it does | Get data from | Command |
-|---|---|---|---|
-| `keyword-research.md` | Full keyword research: tiered keywords, intent classification, difficulty, and cluster suggestions. | Ahrefs · Semrush · Google Keyword Planner | `/keyword-research` |
-| `write-blog.md` | 1,200–1,800 word SEO blog post with heading hierarchy, keyword placement, and meta elements. | Brief / keyword (no export needed) | `/write-blog` |
-| `pillar-page.md` | 2,500–4,000 word pillar page with table of contents, cluster link placeholders, and FAQ. | Ahrefs · Semrush · SERP research | `/pillar-page` |
-| `topic-cluster.md` | Complete topic cluster: pillar + 8–15 cluster articles with keyword targets and internal linking map. | Ahrefs · Semrush · Google SERP | `/topic-cluster` |
-| `content-calendar.md` | SEO content calendar in markdown table format with keyword targets and topic cluster mapping. | Ahrefs · Semrush · existing content audit | `/content-calendar` |
-| `comparison-article.md` | 1,500–2,500 word commercial comparison article with head-to-head table and verdict section. | G2 · Capterra · product/pricing pages | `/comparison-article` |
-| `outreach-email.md` | Full outreach sequence (initial + 2 follow-ups) for 6 link building campaign types. | Hunter.io · LinkedIn · Ahrefs | `/outreach-email` |
-| `brand-mention-pitch.md` | High-conversion pitch to turn unlinked brand mentions into backlinks. | Google Alerts · Ahrefs Mentions · Brand24 | `/brand-mention-pitch` |
-| `press-release.md` | 400–600 word AP-style press release for launches, funding, partnerships, or events. | Internal company data | `/press-release` |
-| `backlink-article.md` | 500–700 word editorial article with a natural backlink placement using the exact anchor text. | Keyword + target URL | `/backlink-article` |
-
----
-
-### 📍 Local SEO
-
-| Prompt | What it does | Get data from | Command |
-|---|---|---|---|
-| `gbp-description.md` | 3 GBP description variants optimized for local keywords and Google's 750-character limit. | Google Business Profile dashboard | `/gbp-description` |
-| `local-landing.md` | Complete local landing page (600–1,000 words) for a service + city with FAQ and LocalBusiness schema. | Internal business data | `/local-landing` |
-| `review-responses.md` | 12 review response templates covering 5-star, 3-star, and 1–2 star reviews. | Google Business Profile · Yelp | `/review-responses` |
-
----
-
-### 🛒 E-commerce SEO
-
-| Prompt | What it does | Get data from | Command |
-|---|---|---|---|
-| `product-description.md` | Product descriptions in three formats (short, long, bullets) plus title tag and meta description. | Product database · spec sheets | `/product-description` |
-| `category-page.md` | Above-fold intro and below-fold buyer's guide content for category pages. | Internal product data · competitor pages | `/category-page` |
-| `product-schema.md` | Complete Product JSON-LD with Offer, AggregateRating, and Review nesting. | Product database · pricing system | `/product-schema` |
-
----
-
-### 📊 Analytics & Data
-
-#### Google Analytics 4
-
-| Prompt | What it does | Get data from | Command |
-|---|---|---|---|
-| `ga4-traffic.md` | GA4 organic traffic trends, landing page engagement quality, and hidden gem pages. | GA4 → Acquisition → Landing page → Export CSV | `/ga4-traffic` |
-| `ga4-conversions.md` | Which organic pages drive the most conversions and where conversion leaks occur. | GA4 → Conversions (filter: Organic Search) → Export CSV | `/ga4-conversions` |
-| `ga4-content.md` | Four-quadrant content matrix (traffic × engagement) with refresh and consolidation recommendations. | GA4 → Engagement → Pages and Screens → Export CSV | `/ga4-content` |
-
-#### Google Search Console
-
-| Prompt | What it does | Get data from | Command |
-|---|---|---|---|
-| `gsc-indexing.md` | Diagnoses every GSC Coverage exclusion reason with fixes and an indexation health score. | GSC → Index → Pages → Export | `/gsc-indexing` |
-| `gsc-links.md` | GSC external and internal link data: equity distribution, anchor text risks, and quick-win linking table. | GSC → Links → Export | `/gsc-links` |
-
----
-
-### 📈 Reporting & Analysis
-
-| Prompt | What it does | Get data from | Command |
-|---|---|---|---|
-| `competitor-analysis.md` | Full competitive intelligence: keyword footprint, content strategy, backlink profile, and 3-month action plan. | Ahrefs · Semrush · SERP research | `/competitor-analysis` |
-| `content-gap.md` | Keyword and topic gaps vs competitors, prioritized into a three-tier content roadmap. | Ahrefs Content Gap · Semrush Keyword Gap | `/content-gap` |
-| `gsc-performance.md` | GSC performance: traffic trends, CTR opportunities, declining pages, and top 10 action items. | GSC → Performance → Export CSV | `/gsc-performance` |
-| `monthly-report.md` | Client-ready monthly SEO report with executive summary, metrics, wins, concerns, and next steps. | GA4 · GSC · rank tracker | `/monthly-report` |
-| `penalty-diagnosis.md` | Diagnoses organic traffic drops (algorithm, manual action, technical, competitive) with a recovery plan. | GA4 · GSC Performance · Ahrefs | `/penalty-diagnosis` |
-
----
-
-### 🤖 GEO & LLM Optimization
-
-GEO (Generative Engine Optimization) — optimizing content so AI tools like ChatGPT, Perplexity, and Gemini cite your site.
-
-| Prompt | What it does | Get data from | Command |
-|---|---|---|---|
-| `geo-audit.md` | Audits a page across 7 GEO dimensions and returns a GEO Readiness Score 1–10 with specific fixes. | Existing page content (paste directly) | `/geo-audit` |
-| `geo-rewrite.md` | Rewrites a page to maximize AI citation chances: direct answers, entity definitions, structured facts. | Existing page content (paste directly) | `/geo-rewrite` |
-| `geo-entity.md` | Complete entity definition package — definition block, fact sheet, relationship statements, and JSON-LD. | Internal brand/product data | `/geo-entity` |
-| `geo-visibility.md` | 15–20 query test set across brand, category, and intent queries with a visibility score across AI tools. | Brand info + competitor names | `/geo-visibility` |
-| `geo-citations.md` | Which sources AI tools cite for your topics, why, and a Citation Opportunity Map with fast wins. | Target queries + competitor domains | `/geo-citations` |
-
----
-
-## 🤖 Agents
-
-Agents are autonomous multi-step commands that run a full workflow end-to-end — detecting data sources, running multiple analyses in sequence, writing the output, and saving it — without requiring you to babysit each step.
-
-| Agent | What it does | Command |
-|---|---|---|
-| `agent-monthly-report.md` | Detects GA4 and GSC data (MCP or local CSV), analyzes organic traffic and search performance, cross-references both, writes a complete client-ready monthly report, saves it to `outputs/`, and suggests follow-up commands | `/agent-monthly-report` |
-
-**Usage:**
-
-```
-/agent-monthly-report site:acme.com period:"January 2026"
-```
-
-The agent will:
-1. Detect available data (MCP live pull or `data/ga4-*.csv` / `data/gsc-*.csv`)
-2. Analyze GA4 organic traffic
-3. Analyze GSC performance
-4. Cross-reference both to surface top opportunities and concerns
-5. Write the full client-ready report
-6. Save it to `outputs/monthly-report-acme.com-january-2026.md`
-7. Suggest 2–3 follow-up slash commands based on findings
-
-Agent skill files live in `skills/agents/` and follow the same conventions as regular skills.
-
----
-
-## ➕ Adding a New Skill
-
-1. **Create the skill file** in the right category under `skills/`, using this structure:
-
-```
-Role:
-Objective:
-Core Requirements:
-Input I Will Provide:
-Output Instructions:
-```
-
-2. **Name the file to match the command** you want (e.g. `technical-seo/your-skill.md` → `/your-skill`). The sync script picks it up automatically. For autonomous multi-step agents, use the `agents/` subfolder (e.g. `agents/agent-my-workflow.md` → `/agent-my-workflow`).
-
-3. **Run the sync** to generate the Claude Code slash command:
-
-```bash
-python3 sync.sh
-```
-
-4. **Update** `help.md`, `CLAUDE.md`, `GEMINI.md`, `chatgpt.md`, and this README.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for full guidelines.
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome — new prompts, improvements to existing ones, bug fixes, or better documentation.
-
-Read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a PR. For ideas or questions, open an issue or send a message directly.
-
----
-
-## ⚠️ Disclaimer
-
-Always review AI output before publishing, deploying, or sending to a client. LLMs can make mistakes — facts, URLs, schema syntax, redirect rules, and recommendations may be incorrect. Treat every output as a first draft that requires human review.
-
-Never share client data (analytics exports, crawl reports, GSC data, server logs) with any AI tool without explicit client permission. This data contains proprietary business information that belongs to the client.
+MIT
