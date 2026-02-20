@@ -558,4 +558,3 @@ GEO workflow:
 
 ## 🗺️ Next Steps
 
-- [x] **ChatGPT support** — `chatgpt.md` context file and usage instructions for ChatGPT Projects
