@@ -22,8 +22,6 @@ If you do SEO work and use Claude Code, this tool gives you a full library of re
 
 Instead of writing prompts from scratch every time, you type `/write-blog`, `/robots-audit`, or `/keyword-research` directly inside Claude Code and get a professional, structured result immediately.
 
-> **Never used Claude Code?** It's Anthropic's official AI assistant for the terminal. You work with AI directly from your command line — no browser needed. [Learn more →](https://www.npmjs.com/package/@anthropic-ai/claude-code)
-
 ---
 
 ## Requirements
