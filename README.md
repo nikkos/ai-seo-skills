@@ -371,7 +371,12 @@ A ready-to-use template is included in the repo as `mcp-example.json`. Copy it t
 
 </details>
 
-**Best for:** `/canonical-audit` · `/hreflang-audit` · `/cwv-diagnosis` · `/competitor-analysis` · `/content-gap` · `/nap-checker` · `/penalty-diagnosis` · `/geo-visibility` · `/geo-citations`
+**Best for:** `/canonical-audit` · `/hreflang-audit` · `/cwv-diagnosis` · `/competitor-analysis` · `/content-gap` · `/penalty-diagnosis` · `/geo-visibility` · `/geo-citations`
+
+> ⚠️ **Token usage warning:** Analytics MCPs (GA4, GSC) can pull large amounts of data and consume a lot of tokens quickly. Always be specific about what you want — define the date range, metrics, dimensions, and site. Avoid open-ended requests like "pull all my GA4 data". Instead, say:
+> ```
+> Pull organic traffic by landing page for acme.com from 2026-01-01 to 2026-01-31, dimensions: page, sessions, engagement rate.
+> ```
 
 ---
 
