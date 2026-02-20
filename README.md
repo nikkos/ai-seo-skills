@@ -77,122 +77,122 @@ claude
 <details>
 <summary><strong>🔧 Technical SEO (10 commands)</strong></summary>
 
-| Command | What it does |
-|---|---|
-| `/robots-audit` | Audit a robots.txt file for issues |
-| `/sitemap-audit` | Review an XML sitemap for errors and gaps |
-| `/schema-generator` | Generate structured data markup (JSON-LD) |
-| `/canonical-audit` | Find canonical tag issues |
-| `/hreflang-audit` | Check hreflang implementation for international SEO |
-| `/cwv-diagnosis` | Diagnose Core Web Vitals problems |
-| `/redirect-map` | Generate a redirect map for site migrations |
-| `/internal-links` | Audit internal linking structure |
-| `/server-logs` | Analyze server log files for crawl insights |
-| `/crawl-budget` | Identify crawl budget waste |
+| Command | What it does | What to provide |
+|---|---|---|
+| `/robots-audit` | Audit a robots.txt file for issues | Your robots.txt content |
+| `/sitemap-audit` | Review an XML sitemap for errors and gaps | XML sitemap file or sitemap index |
+| `/schema-generator` | Generate structured data markup (JSON-LD) | Content type (Article, Product, etc.) + content details |
+| `/canonical-audit` | Find canonical tag issues | Crawl export or canonical tag data |
+| `/hreflang-audit` | Check hreflang implementation for international SEO | Hreflang tags, HTTP headers, or sitemap |
+| `/cwv-diagnosis` | Diagnose Core Web Vitals problems | PageSpeed Insights report or CrUX data |
+| `/redirect-map` | Generate a redirect map for site migrations | Old URLs and new URLs (CSV or list) |
+| `/internal-links` | Audit internal linking structure | Screaming Frog or crawler export |
+| `/server-logs` | Analyze server log files for crawl insights | Apache/Nginx server log file |
+| `/crawl-budget` | Identify crawl budget waste | Server logs or crawl data + robots.txt |
 
 </details>
 
 <details>
 <summary><strong>📝 On-Page SEO (8 commands)</strong></summary>
 
-| Command | What it does |
-|---|---|
-| `/title-rewrite` | Rewrite page titles for better CTR and rankings |
-| `/headings-audit` | Review heading structure (H1–H6) |
-| `/alt-text` | Write optimized alt text for images |
-| `/content-brief` | Create a full SEO content brief |
-| `/content-refresh` | Update and improve existing content |
-| `/faq-generator` | Generate FAQ sections with schema markup |
-| `/thin-content` | Identify and fix thin content issues |
-| `/meta-descriptions` | Write click-worthy meta descriptions |
+| Command | What it does | What to provide |
+|---|---|---|
+| `/title-rewrite` | Rewrite page titles for better CTR and rankings | Current page titles, target keywords, URLs |
+| `/headings-audit` | Review heading structure (H1–H6) | Page URL or heading structure + target keyword |
+| `/alt-text` | Write optimized alt text for images | Image URLs or filenames + page context |
+| `/content-brief` | Create a full SEO content brief | Target keyword, search intent, competitor URLs |
+| `/content-refresh` | Update and improve existing content | Existing article content or URL + target keyword |
+| `/faq-generator` | Generate FAQ sections with schema markup | Topic or keyword, PAA questions (optional) |
+| `/thin-content` | Identify and fix thin content issues | Page URL + content + target keyword |
+| `/meta-descriptions` | Write click-worthy meta descriptions | Page URLs, target keywords, current descriptions |
 
 </details>
 
 <details>
 <summary><strong>✍️ Content & Link Building (10 commands)</strong></summary>
 
-| Command | What it does |
-|---|---|
-| `/keyword-research` | Full keyword research and clustering |
-| `/write-blog` | Write a complete, SEO-optimized blog post |
-| `/pillar-page` | Create a comprehensive pillar page |
-| `/topic-cluster` | Plan a full topic cluster strategy |
-| `/content-calendar` | Build an SEO content calendar |
-| `/comparison-article` | Write a comparison/versus article |
-| `/outreach-email` | Write link building outreach emails |
-| `/brand-mention-pitch` | Turn unlinked brand mentions into backlinks |
-| `/press-release` | Write an SEO-friendly press release |
-| `/backlink-article` | Write content designed to earn backlinks |
+| Command | What it does | What to provide |
+|---|---|---|
+| `/keyword-research` | Full keyword research and clustering | Topic or niche, target audience, business goals |
+| `/write-blog` | Write a complete, SEO-optimized blog post | Primary keyword, target audience, site URL |
+| `/pillar-page` | Create a comprehensive pillar page | Head keyword, topic focus, cluster articles list |
+| `/topic-cluster` | Plan a full topic cluster strategy | Head keyword, topic focus, audience level |
+| `/content-calendar` | Build an SEO content calendar | Primary keywords, goals, content types, time period |
+| `/comparison-article` | Write a comparison/versus article | Two products/services to compare, pricing info |
+| `/outreach-email` | Write link building outreach emails | Outreach type, target audience, your content/URL |
+| `/brand-mention-pitch` | Turn unlinked brand mentions into backlinks | Publication URL, article URL, brand name, your URL |
+| `/press-release` | Write an SEO-friendly press release | Announcement details, company name, newsworthy event |
+| `/backlink-article` | Write content designed to earn backlinks | Target keyword, landing page URL, topic context |
 
 </details>
 
 <details>
 <summary><strong>📍 Local SEO (3 commands)</strong></summary>
 
-| Command | What it does |
-|---|---|
-| `/gbp-description` | Write a Google Business Profile description |
-| `/local-landing` | Create a local landing page |
-| `/review-responses` | Write professional responses to reviews |
+| Command | What it does | What to provide |
+|---|---|---|
+| `/gbp-description` | Write a Google Business Profile description | Business name, location, services, differentiators |
+| `/local-landing` | Create a local landing page | Service type, city/location, business name |
+| `/review-responses` | Write professional responses to reviews | Business name, service area, industry |
 
 </details>
 
 <details>
 <summary><strong>🛒 E-commerce SEO (3 commands)</strong></summary>
 
-| Command | What it does |
-|---|---|
-| `/product-description` | Write SEO-optimized product descriptions |
-| `/category-page` | Optimize category page content |
-| `/product-schema` | Generate product structured data |
+| Command | What it does | What to provide |
+|---|---|---|
+| `/product-description` | Write SEO-optimized product descriptions | Product name, features, specs, target audience |
+| `/category-page` | Optimize category page content | Category name, brand name, product range |
+| `/product-schema` | Generate product structured data | Product name, image, price, ratings, SKU/GTIN |
 
 </details>
 
 <details>
 <summary><strong>📊 Analytics (6 commands)</strong></summary>
 
-| Command | What it does |
-|---|---|
-| `/ga4-traffic` | Analyze GA4 organic traffic data |
-| `/ga4-conversions` | Review GA4 conversion performance |
-| `/ga4-content` | Analyze GA4 content performance |
-| `/gsc-indexing` | Diagnose Google Search Console indexing issues |
-| `/gsc-links` | Analyze GSC link data |
-| `/gsc-performance` | Full GSC performance analysis |
+| Command | What it does | What to provide |
+|---|---|---|
+| `/ga4-traffic` | Analyze GA4 organic traffic data | GA4 CSV export (organic sessions, devices, geography) |
+| `/ga4-conversions` | Review GA4 conversion performance | GA4 CSV export with conversions and landing pages |
+| `/ga4-content` | Analyze GA4 content performance | GA4 CSV export with landing pages and engagement metrics |
+| `/gsc-indexing` | Diagnose Google Search Console indexing issues | GSC Coverage report data |
+| `/gsc-links` | Analyze GSC link data | GSC Links report data |
+| `/gsc-performance` | Full GSC performance analysis | GSC export (queries, pages, clicks, impressions, CTR) |
 
 </details>
 
 <details>
 <summary><strong>📈 Reporting & Analysis (4 commands)</strong></summary>
 
-| Command | What it does |
-|---|---|
-| `/competitor-analysis` | Analyze a competitor's SEO strategy |
-| `/content-gap` | Find content gaps vs competitors |
-| `/monthly-report` | Generate a monthly SEO report |
-| `/penalty-diagnosis` | Diagnose a potential Google penalty |
+| Command | What it does | What to provide |
+|---|---|---|
+| `/competitor-analysis` | Analyze a competitor's SEO strategy | Competitor URLs + keyword data |
+| `/content-gap` | Find content gaps vs competitors | Your site data + competitor data + GSC/Ahrefs export |
+| `/monthly-report` | Generate a monthly SEO report | GA4 data, GSC data, reporting period, work completed |
+| `/penalty-diagnosis` | Diagnose a potential Google penalty | Traffic drop date, GA4/GSC data, timeline |
 
 </details>
 
 <details>
 <summary><strong>🤖 GEO / LLM Optimization (5 commands)</strong></summary>
 
-| Command | What it does |
-|---|---|
-| `/geo-audit` | Audit content for AI/LLM visibility |
-| `/geo-rewrite` | Rewrite content to appear in AI answers |
-| `/geo-entity` | Build entity authority for LLM recognition |
-| `/geo-visibility` | Improve visibility in generative search |
-| `/geo-citations` | Build citation-worthy content |
+| Command | What it does | What to provide |
+|---|---|---|
+| `/geo-audit` | Audit content for AI/LLM visibility | Page URL or content + target keyword |
+| `/geo-rewrite` | Rewrite content to appear in AI answers | Existing content or URL + target keyword |
+| `/geo-entity` | Build entity authority for LLM recognition | Brand/product/person name + key facts |
+| `/geo-visibility` | Improve visibility in generative search | Brand name, product/service category, target keywords |
+| `/geo-citations` | Build citation-worthy content | Target topics/keywords, content type focus |
 
 </details>
 
 <details>
 <summary><strong>⚡ Agents (1 command)</strong></summary>
 
-| Command | What it does |
-|---|---|
-| `/agent-monthly-report` | Autonomous agent that generates a full monthly SEO report |
+| Command | What it does | What to provide |
+|---|---|---|
+| `/agent-monthly-report` | Autonomous agent that generates a full monthly SEO report | GA4 CSV, GSC CSV, site URL, reporting period |
 
 </details>
 
